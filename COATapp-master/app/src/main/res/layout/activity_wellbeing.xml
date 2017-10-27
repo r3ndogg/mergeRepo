@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="au.edu.federation.myapplication.WellbeingActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <au.edu.federation.myapplication.AvatarGLSurfaceView
+                android:id="@+id/avatarGLSurfaceView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"/>
+
+        </LinearLayout>
+
+    <ScrollView
+            android:id="@+id/wellbeingScrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/scrollViewLinearLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:id="@+id/questionsLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+
+
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/sleepLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/sleepTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sleep_label"/>
+
+            <LinearLayout
+                android:id="@+id/sleepSeekbarLayout"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/sleepImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+
+            <SeekBar
+                android:id="@+id/sleepSeekbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:max="9"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="59dp"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:id="@+id/saveSleepButton"
+                android:layout_gravity="center_horizontal"
+                android:onClick="handleButtonPress" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/moodLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/moodTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mood_label"/>
+
+            <LinearLayout
+                android:id="@+id/moodSeekbarLayout"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/moodImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+
+            <SeekBar
+                android:id="@+id/moodSeekbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:max="9"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"  />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="59dp"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:id="@+id/saveMoodButton"
+                android:layout_gravity="center_horizontal"
+                android:onClick="handleButtonPress" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/energyLayout"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/energyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/energy_label"/>
+
+            <LinearLayout
+                android:id="@+id/energySeekbarLayout"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/energyImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+                <!--android:src="@drawable/mountain_background"-->
+
+
+            <SeekBar
+                android:id="@+id/energySeekbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:max="9"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"  />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="59dp"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:id="@+id/saveEnergyButton"
+                android:layout_gravity="center_horizontal"
+                android:onClick="handleButtonPress" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/editTextTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter Comments!"/>
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:lines="3"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:id="@+id/feedbackEditText"
+            android:windowSoftInputMode="stateHidden"/>
+
+        <Button
+            android:layout_width="59dp"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:id="@+id/saveFeedbackButton"
+            android:layout_gravity="center_horizontal"
+            android:onClick="handleButtonPress"/>
+
+        <Button
+            android:layout_width="226dp"
+            android:layout_height="wrap_content"
+            android:text="load current user"
+            android:id="@+id/loadTableButton"
+            android:layout_gravity="center_horizontal"
+            android:onClick="handleButtonPress" />
+
+        <TextView
+            android:id="@+id/dbTestTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=""/>
+
+    </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+</RelativeLayout>
