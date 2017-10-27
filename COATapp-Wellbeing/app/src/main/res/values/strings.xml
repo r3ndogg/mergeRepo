@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">COAT</string>
+    <string name="sleep_label">How well did you sleep?</string>
+    <string name="mood_label">What is your mood?</string>
+    <string name="energy_label">How is your energy level?</string>
+
+    <string-array name="dietaryCategories">
+        <item>Fruit</item>
+        <item>Vegetables</item>
+        <item>Meat</item>
+        <item>Snack</item>
+        <item>Fast Food</item>
+    </string-array>
+
+</resources>

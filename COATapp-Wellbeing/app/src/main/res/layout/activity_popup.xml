@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="1dp"
+    android:background="@drawable/back">
+
+    <TextView
+        android:text="You found a treasure chest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/foundTextView"
+        android:layout_marginTop="96dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="42dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="18sp" />
+
+    <Button
+        android:text="Close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/closeButton"
+        android:layout_marginStart="88dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/coinsTextView" />
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="129dp"
+        android:id="@+id/treasureImage"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/foundTextView"
+        android:layout_marginStart="64dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:text="+ 5 Coins!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/coinsTextView"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/treasureImage"
+        android:layout_marginStart="68dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="30sp" />
+</android.support.constraint.ConstraintLayout>
