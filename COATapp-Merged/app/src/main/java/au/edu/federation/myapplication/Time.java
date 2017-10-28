@@ -76,19 +76,4 @@ public class Time {
             return false;
         }
     }
-
-    public static boolean isBeforeCurrentDateTime(String date)
-    {
-        if (Integer.parseInt(date.substring(0, 4)) <= Integer.parseInt(getCurrentDate().substring(0, 4)))
-        {
-            if (Integer.parseInt(date.substring(5, 7)) <= Integer.parseInt(getCurrentDate().substring(5, 7)))
-            {
-                if (Integer.parseInt(date.substring(8, 10)) <= Integer.parseInt(getCurrentDate().substring(8, 10)))
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
 }

@@ -10,18 +10,15 @@ public class User {
     private int userID;
     private String name;
     private int achievementPoints;
-    private String gender;
 
-    public User(int userID, String name, int achievementPoints, String gender)
+    public User(int userID, String name, int achievementPoints)
     {
         this.userID = userID;
         this.name = name;
         this.achievementPoints = achievementPoints;
-        this.gender = gender;
     }
 
     public int getUserID() { return userID; }
     public String getName() { return name; }
     public int getAchievementPoints() { return achievementPoints; }
-    public String getGender() { return gender; }
 }

@@ -4,6 +4,12 @@
     <string name="mood_label">What is your mood?</string>
     <string name="energy_label">How is your energy level?</string>
 
+    <string name="menu_action_avatar">Avatar Settings</string>
+    <string name="menu_action_setting">Setting</string>
+    <string name="menu_action_wellbeing">Wellbeing</string>
+    <string name="menu_action_testing_bench">Testing Bench</string>
+    <string name="menu_action_wellbeing_popup">Wellbeing Popup</string>
+
     <string-array name="dietaryCategories">
         <item>Fruit</item>
         <item>Vegetables</item>
@@ -11,5 +17,6 @@
         <item>Snack</item>
         <item>Fast Food</item>
     </string-array>
+    <string name="title_activity_testing_bench">TestingBench</string>
 
 </resources>

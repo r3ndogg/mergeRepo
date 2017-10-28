@@ -9,13 +9,14 @@
     android:theme="@style/AppTheme"
     android:layout_height="match_parent">
 
-    <include
-
-        android:id="@+id/toolbar"
-        layout="@layout/app_bar"
-
-        android:layout_height="wrap_content"
-        android:layout_width="384dp"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -32,90 +33,31 @@
         android:layout_marginLeft="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
 
         <android.support.constraint.ConstraintLayout
             android:orientation="horizontal"
-            android:layout_height="wrap_content"
-            android:layout_width="301dp"
-            android:id="@+id/linearLayout7"
-            android:background="@drawable/border"
-            app:layout_constraintLeft_toLeftOf="@+id/linearLayout5"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
-
-            <Button
-                android:id="@+id/activity"
-                android:background="@drawable/gamelogo_light"
-                android:layout_width="88dp"
-                android:layout_height="60dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="4dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="4dp" />
-
-            <View
-                android:background="#8a000000"
-                android:layout_height="68dp"
-                app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/view4"
-                app:layout_constraintLeft_toRightOf="@+id/activity"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_width="2dp" />
-
-            <TextView
-                android:text="Treasure Hunt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView5"
-                android:textColor="#8a000000"
-                android:fontFamily="sans-serif"
-                android:textSize="24sp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginStart="8dp"
-                app:layout_constraintLeft_toRightOf="@+id/view4"
-                android:layout_marginLeft="8dp" />
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:orientation="horizontal"
+            android:clickable="true"
             android:layout_width="301dp"
             android:layout_height="wrap_content"
             android:weightSum="1"
-            android:id="@+id/linearLayout6"
+            android:id="@+id/dietary_layout"
             android:background="@drawable/border"
-            app:layout_constraintLeft_toLeftOf="@+id/linearLayout7"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+            app:layout_constraintTop_toBottomOf="@+id/treasure_layout"
+            app:layout_constraintLeft_toLeftOf="@+id/treasure_layout">
 
-            <Button
-                android:background="@drawable/foodlogo_light"
-                android:id="@+id/deit"
+            <ImageView
                 android:layout_width="88dp"
                 android:layout_height="60dp"
+                app:srcCompat="@drawable/foodlogo_light"
+                android:id="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="4dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:onClick="LaunchDietaryLog"/>
-
-            <View
-                android:background="#8a000000"
-                android:layout_height="68dp"
-                app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/view3"
-                app:layout_constraintLeft_toRightOf="@+id/deit"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_width="2dp" />
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="6dp" />
 
             <TextView
                 android:text="Food Log"
@@ -127,120 +69,98 @@
                 android:textSize="24sp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="@+id/view3"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp" />
+                app:layout_constraintLeft_toRightOf="@+id/imageView3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.3" />
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
             android:orientation="horizontal"
+            android:clickable="true"
+            android:layout_height="wrap_content"
+            android:layout_width="301dp"
+            android:id="@+id/excercise_layout"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <ImageView
+                app:srcCompat="@drawable/gamelogo_light"
+                android:id="@+id/imageView"
+                android:layout_width="88dp"
+                android:layout_height="60dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:text="Step Counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5"
+                android:textColor="#8a000000"
+                android:fontFamily="sans-serif"
+                android:textSize="24sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="8dp"
+                app:layout_constraintLeft_toRightOf="@+id/imageView"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.3" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:orientation="horizontal"
+            android:clickable="true"
             android:layout_width="301dp"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout5"
+            android:weightSum="1"
+            android:id="@+id/treasure_layout"
             android:background="@drawable/border"
-            app:layout_constraintLeft_toLeftOf="@+id/linearLayout"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            app:layout_constraintTop_toBottomOf="@+id/excercise_layout"
+            app:layout_constraintLeft_toLeftOf="@+id/excercise_layout">
 
-            <Button
-                android:id="@+id/wellbeingButton"
-                android:background="@drawable/surverylogo_light"
+            <ImageView
                 android:layout_width="88dp"
                 android:layout_height="60dp"
+                app:srcCompat="@drawable/gamelogo_light"
+                android:id="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="4dp"
-                android:layout_marginStart="4dp"
-
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:onClick="handleButtonPress"
-                android:layout_marginBottom="4dp" />
-
-            <View
-                android:background="#8a000000"
-                android:layout_height="68dp"
-                app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/view2"
-                app:layout_constraintLeft_toRightOf="@+id/wellbeingButton"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_width="2dp" />
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="6dp" />
 
             <TextView
-                android:text="Wellbeing"
+                android:text="Treasure Hunt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView7"
+                android:id="@+id/textView6"
                 android:textColor="#8a000000"
                 android:fontFamily="sans-serif"
                 android:textSize="24sp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="8dp"
-                app:layout_constraintLeft_toRightOf="@+id/view2"
-                android:layout_marginLeft="8dp" />
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:orientation="horizontal"
-            android:layout_width="300dp"
-            android:id="@+id/linearLayout"
-            android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="24dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp">
-
-            <TextView
-                android:text="Avatar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView8"
-                android:textColor="#8a000000"
-                android:fontFamily="sans-serif"
-                android:textSize="24sp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="@+id/view"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp" />
-
-            <View
-                android:background="#8a000000"
-                android:layout_height="68dp"
-                app:layout_constraintLeft_toRightOf="@+id/avatar"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:id="@+id/view"
-                android:layout_width="2dp" />
-
-            <Button
-                android:id="@+id/avatar"
-                android:background="@drawable/avatar_light"
-                android:layout_width="88dp"
-                android:layout_height="60dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginBottom="4dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp" />
+                app:layout_constraintLeft_toRightOf="@+id/imageView3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.3" />
         </android.support.constraint.ConstraintLayout>
 
         <TextView
-            android:text="UI version 0.2"
+            android:text="UI version 0.3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginBottom="8dp" />
 
     </android.support.constraint.ConstraintLayout>

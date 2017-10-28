@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_avatar_settings"
+        android:title="@string/menu_action_avatar"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_setting"
+        android:title="@string/menu_action_setting"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_testing_bench"
+        android:title="@string/menu_action_testing_bench"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_wellbeing"
+        android:title="@string/menu_action_wellbeing"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_wellbeing_popup"
+        android:title="@string/menu_action_wellbeing_popup"
+        app:showAsAction="never" />
+
+</menu>

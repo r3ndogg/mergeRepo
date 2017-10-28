@@ -25,11 +25,15 @@ public class DietaryLog extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+//
+//        if (global.adultSignin == false){
+//            approveButton.setVisibility(View.GONE);
+//        }
     }
 
 
     public void LaunchAddDietaryLog(View v){
-        Intent launchAddDietaryLog = new Intent(this, AddDietaryItem.class);
+        Intent launchAddDietaryLog = new Intent(this, AddDietaryLog.class);
         startActivity(launchAddDietaryLog);
     }
 

@@ -1,9 +1,8 @@
 package au.edu.federation.myapplication;
 
-import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -15,8 +14,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText password;
     TextView viewWrong;
 
-    public static Context context;
-
     //REMOVE FROM FINAL APPLICATION
     boolean skipLogin = true; //test value to stop login menu from appearing and making testing a pain in the ass
 
@@ -25,10 +22,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Global.getInstance().appContext = getApplicationContext();
-        Log.d("appContext", Global.getInstance().appContext.toString());
-        context = this;
-
         if (skipLogin){
             launchMainActivity();
         }
@@ -36,11 +29,6 @@ public class LoginActivity extends AppCompatActivity {
         username = (EditText) findViewById(R.id.txtUsername);
         password = (EditText) findViewById(R.id.txtPassword);
         viewWrong = (TextView)findViewById(R.id.txtViewWrong);
-
-        if(Control.getUser(this) != null)
-        {
-            launchMainActivity();
-        }
     }
 
     public void login(View view){
@@ -52,12 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         String strPass = password.getText().toString();
 
 
-        if(Control.getUser(this) == null)
-        {
-
-
-            Control.login(strUser, strPass, this);
-            /*
+        if (strUser.equals("admin")){
             Log.d("LOGIN", "User Correct");
             if (strPass.equals("password")){
                 Log.d("LOGIN", "Password Correct");
@@ -69,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         else {
             viewWrong.setVisibility(View.VISIBLE);
-        */}
+        }
     }
 
     private void launchMainActivity(){

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="au.edu.federation.myapplication.WellbeingActivity">
+    tools:context="au.edu.federation.myapplication.DatabasePackage.WellbeingActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -17,11 +17,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:weightSum="1">
-
-            <au.edu.federation.myapplication.AvatarGLSurfaceView
-                android:id="@+id/avatarGLSurfaceView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"/>
 
         </LinearLayout>
 
@@ -92,7 +87,7 @@
                 android:layout_width="59dp"
                 android:layout_height="wrap_content"
                 android:text="Save"
-                android:id="@+id/saveQuestion1Button"
+                android:id="@+id/saveSleepButton"
                 android:layout_gravity="center_horizontal"
                 android:onClick="handleButtonPress" />
 
@@ -137,7 +132,7 @@
                 android:layout_width="59dp"
                 android:layout_height="wrap_content"
                 android:text="Save"
-                android:id="@+id/saveQuestion2Button"
+                android:id="@+id/saveMoodButton"
                 android:layout_gravity="center_horizontal"
                 android:onClick="handleButtonPress" />
 
@@ -184,7 +179,7 @@
                 android:layout_width="59dp"
                 android:layout_height="wrap_content"
                 android:text="Save"
-                android:id="@+id/saveQuestion3Button"
+                android:id="@+id/saveEnergyButton"
                 android:layout_gravity="center_horizontal"
                 android:onClick="handleButtonPress" />
 

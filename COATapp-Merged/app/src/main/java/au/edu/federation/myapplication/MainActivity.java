@@ -1,23 +1,32 @@
 package au.edu.federation.myapplication;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
+import au.edu.federation.myapplication.AvatarPackage.AvatarActivity;
+import au.edu.federation.myapplication.DatabasePackage.WellbeingActivity;
 import au.edu.federation.myapplication.DietaryLogPackage.DietaryLog;
-import au.edu.federation.myapplication.ExercisePackage.ExerciseHandler;
+import au.edu.federation.myapplication.GlobalClasses.Global;
+import au.edu.federation.myapplication.PedometerService.PedometerActivity;
+import au.edu.federation.myapplication.TreasureHunt.ExerciseHandler;
+import au.edu.federation.myapplication.GlobalClasses.SharedPreferencesHandler;
+import au.edu.federation.myapplication.WellBeingPackage.WellbeingPopUp;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mapButton, avatarButton;
+    private final String TAG = "MainActivity";
+
     public SharedPreferencesHandler prefHand;
     private Toolbar toolbar;
-    public static Context context;
-
+    private ConstraintLayout excerciseLayout, dietaryLayout, treasureLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,47 +36,74 @@ public class MainActivity extends AppCompatActivity {
         prefHand = new SharedPreferencesHandler();
         int coins = prefHand.getBalance(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
 
         toolbar.setTitle("COATApp");
-        toolbar.setTitleTextColor(0xFFFFFFFF);
         toolbar.setSubtitle("Coins: " + coins);
-        toolbar.setSubtitleTextColor(0xFFFFFFFF);
 
         prefHand = new SharedPreferencesHandler();
 
-        mapButton = (Button) findViewById(R.id.activity);
-        mapButton.setOnClickListener( new View.OnClickListener() {
+        excerciseLayout = (ConstraintLayout)findViewById(R.id.excercise_layout);
+        dietaryLayout = (ConstraintLayout)findViewById(R.id.dietary_layout);
+        treasureLayout = (ConstraintLayout)findViewById(R.id.treasure_layout);
+
+        treasureLayout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), ExerciseHandler.class));
             }
         });
 
-        avatarButton = (Button) findViewById(R.id.avatar);
-        avatarButton.setOnClickListener(new View.OnClickListener() {
+        dietaryLayout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), AvatarActivity.class));
+                startActivity(new Intent(getApplicationContext(), DietaryLog.class));
             }
         });
 
-        context = this;
+        excerciseLayout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), PedometerActivity.class));
+            }
+        });
+
+        Log.d(TAG, Global.questionsAnswered().toString());
     }
 
-    public void handleButtonPress(View v) {
-        switch (v.getId()) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
-            case R.id.wellbeingButton: {
-                Intent intent = new Intent(this, WellbeingActivity.class);
-                startActivity(intent);
-                break; }
+        MenuInflater mMenuInflater = getMenuInflater();
+        mMenuInflater.inflate(R.menu.my_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == R.id.action_avatar_settings){
+            startActivity(new Intent(getApplicationContext(), AvatarActivity.class));
         }
-    }
 
-    public void LaunchDietaryLog(View v){
-        Intent launchDietaryLog = new Intent(this, DietaryLog.class);
-        startActivity(launchDietaryLog);
+        if(item.getItemId() == R.id.action_wellbeing){
+            startActivity(new Intent(getApplicationContext(), WellbeingActivity.class));
+        }
+
+        if(item.getItemId() == R.id.action_setting){
+            startActivity(new Intent(getApplicationContext(), Settings.class));
+        }
+
+        if(item.getItemId() == R.id.action_testing_bench){
+            startActivity(new Intent(getApplicationContext(), TestingBench.class));
+        }
+
+        if(item.getItemId() == R.id.action_wellbeing_popup){
+            startActivity(new Intent(getApplicationContext(), WellbeingPopUp.class));
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void setToolbar(){
@@ -84,5 +120,4 @@ public class MainActivity extends AppCompatActivity {
         setToolbar();
 
     }
-
 }
