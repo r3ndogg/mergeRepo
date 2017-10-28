@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">HealthAndWellbeingApp</string>
-    <string name="sleep_label">How well did you sleep?</string>
-    <string name="mood_label">What is your mood?</string>
-    <string name="energy_label">How is your energy level?</string>
-
-</resources>
